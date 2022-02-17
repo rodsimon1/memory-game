@@ -7,7 +7,7 @@ body {
   font-family: Raleway, sans-serif;
   font-size: 1.5em;
   text-align: center;
-  background: #1b1523;
+  background: linear-gradient(to bottom left, rgb(252, 49, 49), rgb(52, 52, 255));
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

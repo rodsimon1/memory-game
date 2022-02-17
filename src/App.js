@@ -3,12 +3,12 @@ import './App.css';
 import SingleCard from './components/SingleCard';
 
 const cardImages = [
-  { name: 'helmet', src: '/img/helmet-1.png', matched: false },
-  { name: 'potion', src: '/img/potion-1.png', matched: false },
-  { name: 'ring', src: '/img/ring-1.png', matched: false },
-  { name: 'scroll', src: '/img/scroll-1.png', matched: false },
-  { name: 'shield', src: '/img/shield-1.png', matched: false },
-  { name: 'sword', src: '/img/sword-1.png', matched: false },
+  { name: 'batman', src: '/img/icons8-batman-200.png', matched: false },
+  { name: 'casapapel', src: '/img/icons8-dinheiro-assalto-dali-200.png', matched: false },
+  { name: 'bender', src: '/img/icons8-futurama-bender-200.png', matched: false },
+  { name: 'potter', src: '/img/icons8-harry-potter-200.png', matched: false },
+  { name: 'rick', src: '/img/icons8-rick-sanchez-200.png', matched: false },
+  { name: 'ninja', src: '/img/icons8-tartaruga-ninja-200.png', matched: false },
 ];
 
 function App() {
@@ -79,28 +79,33 @@ function App() {
   // console.log(cards);
 
   return (
-    <div className={`App`}>
-      <h1>Memory Game</h1>
-      <button onClick={shuffleCards} className="button">
-        New Game
-      </button>
-      <p>Turns: {turns}</p>
+    <>
+      <div className={`App`}>
+        <h1>Memory Game</h1>
+        <button onClick={shuffleCards} className="button">
+          New Game
+        </button>
+        <p>Turns: {turns}</p>
 
-      <div>
-        {winGame ? <h1 className={`${winGame ? 'won' : ''}`}>Congratulations!</h1> : <div></div>}
+        <div>{winGame ? <h1 className={`${winGame ? 'won' : ''}`}>Congratulations!</h1> : <div></div>}</div>
+        <div className="card-grid">
+          {cards.map((card) => (
+            <SingleCard
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+            />
+          ))}
+        </div>
       </div>
-      <div className="card-grid">
-        {cards.map((card) => (
-          <SingleCard
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
-      </div>
-    </div>
+      <footer>
+        <p>
+          Made with React by <a href="https://www.linkedin.com/in/rodrigo-simon/"> Rodrigo Simon</a>
+        </p>
+      </footer>
+    </>
   );
 }
 
