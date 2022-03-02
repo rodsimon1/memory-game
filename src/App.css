@@ -19,10 +19,33 @@
   color: #fff;
 }
 
+.difficulty {
+  padding-top: 1px;
+}
+
+.difficulty .button {
+  padding: 6px 40px;
+  margin: 0 10px;
+}
+
 .card-grid {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card-grid-medium {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card-grid-hard {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
